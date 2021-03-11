@@ -13,3 +13,13 @@ Introduction Encapsulation
 Accesseurs/Mutateurs
 <br/>
 Surdefinition de fcts
+
+Contructeurs :
+<br/>
+Constructeurs sans paramètres
+<br/>
+Constructeur avec paramètres
+<br/>
+Constructeur avec valeurs par défaut
+<br/>
+Valeurs par défaut fonctions
