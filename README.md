@@ -7,6 +7,9 @@ Cpp Ludus F2
 Introduction C++ 
 
 Création classe CPoint
+<br/>
 Introduction Encapsulation
+<br/>
 Accesseurs/Mutateurs
+<br/>
 Surdefinition de fcts
