@@ -2,30 +2,13 @@
 #include <stdio.h>
 
 
-//Constructeur sans paramètres
-/*CPoint::CPoint()
-{
-	this->n_x = 10;
-	this->n_y = 8;
 
-}*/
-//Constructeur avec paramètres
-/*CPoint::CPoint(int n_x, int n_y)
+//constructeur
+CPoint::CPoint(int n_x, int n_y,string str_cl)
 {
 	this->n_x = n_x;
 	this->n_y = n_y;
-}*/
-
-/*CPoint::CPoint(int n_y)
-{
-	this->n_x = 0;
-	this->n_y = n_y;
-}*/
-
-CPoint::CPoint(int n_x, int n_y)
-{
-	this->n_x = n_x;
-	this->n_y = n_y;
+	this->str_coul = str_cl;
 }
 
 
@@ -39,6 +22,11 @@ int CPoint::getY()const
 	return n_y;
 }
 
+string CPoint::getCoul() const
+{
+	return str_coul;
+}
+
 void CPoint::setX(int n_x)
 {
 	this->n_x = n_x;
@@ -47,4 +35,9 @@ void CPoint::setX(int n_x)
 void CPoint::setY(int n_y)
 {
 	this->n_y = n_y;
+}
+
+void CPoint::setCoul(string str_cl)
+{
+	this->str_coul = str_cl;
 }
