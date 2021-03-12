@@ -2,88 +2,58 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
-
+//#define TAILLE 10
 
 using namespace std;
 
 void afficheLog(int n_value);
 void afficheLog(float flt_value);
 void afficheLog(string str_value);
+void afficheLog(char* pt_value);
 
 int main() {
 
+	const int TAILLE = 10;
+	
 	//Instance de la classe CPoint
-	CPoint p;
-
-	CPoint p1(6, 5,"vert");
-	int n_x=0, n_y=0;
+	char* pt_couleur = new char[TAILLE];
+	strcpy_s(pt_couleur,TAILLE,"rouge");
+	CPoint p1(0, 0, pt_couleur);
 	
+	//Tableau de points
+	CPoint tab_point[TAILLE];
 
-	cout << "Entrez x:" << endl;
-	cin >> n_x;
-	cout << "Entrez y:" << endl;
-	cin >> n_y;
-
-	p.setX(n_x);
-	p.setY(n_y);
-
-	cout << "X :" << endl;
-	afficheLog(p.getX());
-	cout << "Y :" << endl;
-	afficheLog(p.getY());
-
-	cout << "Coul du point : " << endl;
-	afficheLog(p.getCoul());
-	
-	string str_chaine = p.getCoul();
-
-	str_chaine = p1.getCoul();
-
-	cout << str_chaine[3] << endl;
-	char c_car = str_chaine[0];
+	for (int n_i = 0; n_i < TAILLE; n_i++) {
 
 
-	//relation entre string et char*
-	//string => tableau de caractères
-	int n_i = 0;
-	int n_cpt = 0;
-	while (str_chaine[n_i] != '\0') {
-
-		n_cpt = n_i;
-		n_i++;
+		afficheLog(tab_point[n_i].getX());
+		afficheLog(tab_point[n_i].getY());
+		afficheLog(tab_point[n_i].getCoul());
 	}
 
-	char* ptr_chaine = (char*)malloc(n_cpt + 2 * sizeof(char));
+	//Tableau dynamique de point
+	CPoint* pt_point = new CPoint[TAILLE];
 
-	for (n_i = 0; n_i <= n_cpt + 1; n_i++) {
+	for (int n_i = 0; n_i < TAILLE; n_i++) {
 
-		if (ptr_chaine) {
-			ptr_chaine[n_i] = str_chaine[n_i];
-		}
-		
-		if (n_i == n_cpt + 1)
-		{
-			if (ptr_chaine) {
-				ptr_chaine[n_i] = '\0';
-			}
-		}
 
-		
+		afficheLog(pt_point[n_i].getX());
+		afficheLog(pt_point[n_i].getY());
+		afficheLog(pt_point[n_i].getCoul());
 	}
-
-	free(ptr_chaine);
 	
 	
 
-
-
+	delete[]pt_couleur;
+	delete[]pt_point;
 	
-
-
-
+	
+	/*int *pt_entier = new int;
+	delete pt_entier;*/
 
 
 	return 0;
+	
 }
 
 void afficheLog(int n_value) {
@@ -100,4 +70,10 @@ void afficheLog(float flt_value) {
 void afficheLog(string str_value) {
 
 	cout << "Log : " << str_value << endl;
+}
+
+void afficheLog(char* pt_value) {
+
+	cout << "Log : " << pt_value << endl;
+
 }
