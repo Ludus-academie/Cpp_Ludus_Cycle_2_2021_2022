@@ -41,6 +41,9 @@ public :
 	void setY(int n_y=9);
 	void setCoul(char* pt_coul);
 
+	//Passage par référence
+	bool coincidePoint(CPoint &p)const;
+
 
 	
 

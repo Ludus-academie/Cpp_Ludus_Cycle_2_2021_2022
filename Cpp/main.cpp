@@ -10,6 +10,7 @@ void afficheLog(int n_value);
 void afficheLog(float flt_value);
 void afficheLog(string str_value);
 void afficheLog(char* pt_value);
+void modifPoint(CPoint &p);
 
 int main() {
 
@@ -20,41 +21,35 @@ int main() {
 	strcpy_s(pt_couleur,TAILLE,"rouge");
 	CPoint p1(0, 0, pt_couleur);
 	
-	//Tableau de points
-	CPoint tab_point[TAILLE];
-
-	for (int n_i = 0; n_i < TAILLE; n_i++) {
+	
+	CPoint p2(0, 2, pt_couleur);
 
 
-		afficheLog(tab_point[n_i].getX());
-		afficheLog(tab_point[n_i].getY());
-		afficheLog(tab_point[n_i].getCoul());
-	}
+	bool test=p1.coincidePoint(p2);
+	
+	modifPoint(p2);
 
-	//Tableau dynamique de point
-	CPoint* pt_point = new CPoint[TAILLE];
-
-	for (int n_i = 0; n_i < TAILLE; n_i++) {
-
-
-		afficheLog(pt_point[n_i].getX());
-		afficheLog(pt_point[n_i].getY());
-		afficheLog(pt_point[n_i].getCoul());
-	}
 	
 	
-
-	delete[]pt_couleur;
-	delete[]pt_point;
 	
-	
-	/*int *pt_entier = new int;
-	delete pt_entier;*/
 
 
 	return 0;
 	
 }
+
+//Passage par référence
+void modifPoint(CPoint &p) {
+
+	p.setX(12);
+	p.setY(25);
+	char* p_coul = new char[10];
+	strcpy_s(p_coul, 10, "Orange");
+	p.setCoul(p_coul);
+
+}
+
+
 
 void afficheLog(int n_value) {
 

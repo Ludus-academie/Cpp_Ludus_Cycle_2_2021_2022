@@ -26,7 +26,10 @@ CPoint::CPoint(int n_x, int n_y,char *pt_coul)
 CPoint::~CPoint()
 {
 	std::cout << "Destructeur" << std::endl;
+	
 	delete[] pt_coul;
+	
+	
 		
 	
 }
@@ -62,6 +65,15 @@ void CPoint::setY(int n_y)
 void CPoint::setCoul(char* pt_coul)
 {
 	strcpy_s(this->pt_coul, TAILLE, pt_coul);
+}
+
+bool CPoint::coincidePoint(CPoint &p) const
+{
+	if (this->n_x == p.n_x && this->n_y == p.n_y)
+		return true;
+	else
+		return false;
+
 }
 
 
