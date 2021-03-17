@@ -8,10 +8,10 @@ using namespace std;
 
 
 
-void afficheLog(int n_value);
+/*void afficheLog(int n_value);
 void afficheLog(float flt_value);
 void afficheLog(string str_value);
-void afficheLog(char* pt_value);
+void afficheLog(char* pt_value);*/
 void modifPoint(CPoint &p);
 
 int main() {
@@ -25,16 +25,17 @@ int main() {
 	
 	CPoint p2(0, 2, pt_couleur);
 	
-	//
+	
 	cout << CPoint::getCptInstance() << endl;
 
 	bool test=p1.coincidePoint(p2);
 	
 	modifPoint(p2);
 
+
+	p1.afficheLog();
 	
-	
-	
+
 
 
 	return 0;

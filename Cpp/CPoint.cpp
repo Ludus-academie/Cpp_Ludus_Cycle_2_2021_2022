@@ -44,6 +44,7 @@ CPoint::~CPoint()
 
 int CPoint::getX()const
 {
+	
 	return n_x;
 }
 
@@ -87,5 +88,9 @@ bool CPoint::coincidePoint(CPoint &p) const
 		return false;
 
 }
+
+
+
+
 
 

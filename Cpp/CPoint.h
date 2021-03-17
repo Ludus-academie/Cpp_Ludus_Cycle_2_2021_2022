@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -50,8 +51,12 @@ public :
 	//Passage par référence
 	bool coincidePoint(CPoint &p)const;
 
+	//inline
+	inline void afficheLog() {
 
-
+		cout << n_x << n_y << endl;
+	}
+	
 
 
 
