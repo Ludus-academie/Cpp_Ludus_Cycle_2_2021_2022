@@ -18,6 +18,9 @@ private :
 
 	char* pt_coul;
 
+	static int n_cpt;
+
+
 
 protected :
 
@@ -33,6 +36,9 @@ public :
 	int getX()const;
 	int getY()const;
 	char* getCoul()const;
+
+	static int getCptInstance();
+
 	
 
 
@@ -45,7 +51,6 @@ public :
 	bool coincidePoint(CPoint &p)const;
 
 
-	
 
 
 

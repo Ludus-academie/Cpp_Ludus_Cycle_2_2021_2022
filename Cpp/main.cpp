@@ -6,6 +6,8 @@
 
 using namespace std;
 
+
+
 void afficheLog(int n_value);
 void afficheLog(float flt_value);
 void afficheLog(string str_value);
@@ -21,9 +23,10 @@ int main() {
 	strcpy_s(pt_couleur,TAILLE,"rouge");
 	CPoint p1(0, 0, pt_couleur);
 	
-	
 	CPoint p2(0, 2, pt_couleur);
-
+	
+	//
+	cout << CPoint::getCptInstance() << endl;
 
 	bool test=p1.coincidePoint(p2);
 	
@@ -43,9 +46,8 @@ void modifPoint(CPoint &p) {
 
 	p.setX(12);
 	p.setY(25);
-	char* p_coul = new char[10];
-	strcpy_s(p_coul, 10, "Orange");
-	p.setCoul(p_coul);
+	strcpy_s(p.getCoul(), 10, "Orange");
+	
 
 }
 
