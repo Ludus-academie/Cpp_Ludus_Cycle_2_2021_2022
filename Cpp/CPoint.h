@@ -21,7 +21,7 @@ private :
 
 	static int n_cpt;
 
-
+	
 
 protected :
 
@@ -30,6 +30,11 @@ public :
 	
 	CPoint();
 	CPoint(int n_x, int n_y, char *pt_coul);
+
+	//Constructeur de copie
+	CPoint(CPoint& p);
+
+	//Destructeur
 	~CPoint();
 
 

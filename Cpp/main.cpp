@@ -24,18 +24,13 @@ int main() {
 	CPoint p1(0, 0, pt_couleur);
 	
 	CPoint p2(0, 2, pt_couleur);
-	
-	
-	cout << CPoint::getCptInstance() << endl;
-
-	bool test=p1.coincidePoint(p2);
-	
-	modifPoint(p2);
 
 
-	p1.afficheLog();
+	//Constructeur de copie
 	
+	CPoint p3(p1);
 
+	CPoint p4 = p2;
 
 
 	return 0;
