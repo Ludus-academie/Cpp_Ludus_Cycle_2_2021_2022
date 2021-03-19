@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CPoint.h" />
+    <ClInclude Include="CCercle.h" />
     <ClInclude Include="tPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CCercle.cpp" />
     <ClCompile Include="CPoint.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tPoint.cpp" />

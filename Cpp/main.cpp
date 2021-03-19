@@ -1,4 +1,5 @@
 #include "CPoint.h"
+#include "CCercle.h"
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
@@ -8,10 +9,10 @@ using namespace std;
 
 
 
-/*void afficheLog(int n_value);
+void afficheLog(int n_value);
 void afficheLog(float flt_value);
 void afficheLog(string str_value);
-void afficheLog(char* pt_value);*/
+void afficheLog(char* pt_value);
 void modifPoint(CPoint &p);
 
 int main() {
@@ -31,6 +32,21 @@ int main() {
 	CPoint p3(p1);
 
 	CPoint p4 = p2;
+
+
+	//Fonction amie coincidePoint
+	cout << coincidePoint(p2, p4) << endl;
+
+	//Classe Cercle
+	CCercle	c(10, 2, 10);
+
+	//Fonction membre de CPoint et amie de CCercle
+	cout<<p4.collision(c)<<endl;
+
+	//Fonction indépendante et amie de CCercle et de CPoint 
+	cout<<collision(p4,c)<<endl;
+
+
 
 
 	return 0;

@@ -4,6 +4,10 @@
 
 using namespace std;
 
+
+
+class CCercle;
+
 class CPoint {
 
 
@@ -53,8 +57,17 @@ public :
 	void setY(int n_y=9);
 	void setCoul(char* pt_coul);
 
-	//Passage par référence
-	bool coincidePoint(CPoint &p)const;
+	//Méthode coincide, fcts amie independante de classe
+	friend bool coincidePoint(const CPoint & p, const CPoint & q);
+
+	//fonction membre de la classe point amie de la classe Cercle, 
+	//accès aux membres private de CCercle
+	bool collision(CCercle& c);
+
+	//fonction amie de la classe point et cercle, 
+	//accès aux membres private de CPoint et CCercle
+	friend bool collision(CPoint& p, CCercle& c);
+	
 
 	//inline
 	inline void afficheLog() {

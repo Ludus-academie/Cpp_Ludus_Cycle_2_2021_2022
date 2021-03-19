@@ -92,17 +92,13 @@ void CPoint::setCoul(char* pt_coul)
 	strcpy_s(this->pt_coul, TAILLE, pt_coul);
 }
 
-bool CPoint::coincidePoint(CPoint &p) const
+
+
+bool coincidePoint(const CPoint& p, const CPoint& q)
 {
-	if (this->n_x == p.n_x && this->n_y == p.n_y)
-		return true;
-	else
-		return false;
+	
+	return p.n_x == q.n_x && p.n_y == q.n_y;
 
 }
-
-
-
-
 
 
