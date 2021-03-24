@@ -5,7 +5,7 @@
 using namespace std;
 
 
-
+//Forward declaration
 class CCercle;
 
 class CPoint {

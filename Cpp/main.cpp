@@ -86,3 +86,5 @@ void afficheLog(char* pt_value) {
 	cout << "Log : " << pt_value << endl;
 
 }
+
+
