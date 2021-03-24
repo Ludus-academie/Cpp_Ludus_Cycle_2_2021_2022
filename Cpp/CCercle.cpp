@@ -23,6 +23,8 @@ bool CPoint::collision(CCercle& c)
 
 }
 
+
+
 //fonction amie de la classe point et cercle, 
 //accès aux membres private de CPoint et CCercle
 bool collision(CPoint& p, CCercle& c)
@@ -33,3 +35,7 @@ bool collision(CPoint& p, CCercle& c)
 	else
 		return true;
 }
+
+
+
+

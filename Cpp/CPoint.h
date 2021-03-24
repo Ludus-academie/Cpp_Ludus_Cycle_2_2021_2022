@@ -74,6 +74,21 @@ public :
 
 		cout << n_x << n_y << endl;
 	}
+
+
+	//Surcharge opérateur
+
+	//Surcharge opérateur +
+	CPoint operator +(CPoint& p)const;
+
+
+	//Surcharge operateur + avec une fct amie
+	friend CPoint operator + (CPoint& p1,CPoint &p2);
+
+	//Surcharge opérateur =
+
+	CPoint operator =(const CPoint& p);
+
 	
 
 

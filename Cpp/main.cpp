@@ -34,19 +34,10 @@ int main() {
 	CPoint p4 = p2;
 
 
-	//Fonction amie coincidePoint
-	cout << coincidePoint(p2, p4) << endl;
+	//Surcharge opérateur
+	p4=p1 + p2;
 
-	//Classe Cercle
-	CCercle	c(10, 2, 10);
-
-	//Fonction membre de CPoint et amie de CCercle
-	cout<<p4.collision(c)<<endl;
-
-	//Fonction indépendante et amie de CCercle et de CPoint 
-	cout<<collision(p4,c)<<endl;
-
-
+	
 
 
 	return 0;
