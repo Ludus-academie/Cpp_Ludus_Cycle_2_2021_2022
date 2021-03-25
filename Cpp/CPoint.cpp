@@ -105,18 +105,18 @@ bool coincidePoint(const CPoint& p, const CPoint& q)
 
 
 //Surcharge opérateur +
-CPoint CPoint::operator+(CPoint& p)const
+/*CPoint CPoint::operator+(CPoint& p)const
 {
 	CPoint p_tmp;
 	p_tmp.n_x = this->n_x + p.n_x;
 	p_tmp.n_y = this->n_y + p.n_y;
 
 	return p_tmp;
-}
+}*/
 
 
 //Surcharge opérateur + fct amie
-CPoint operator+(CPoint& p1, CPoint& p2)
+CPoint operator+(const CPoint& p1, const CPoint& p2)
 {
 	CPoint p_tmp;
 	p_tmp.n_x = p1.n_x + p2.n_x;
@@ -138,4 +138,27 @@ CPoint CPoint::operator=(const CPoint& p)
 	strcpy_s(this->pt_coul, TAILLE, p.getCoul());
 	
 	return *this;
+}
+
+
+//prefixe
+CPoint CPoint::operator++() {
+
+	this->n_x++;
+	this->n_y++;
+
+	return *this;
+
+}
+
+//postfixe
+CPoint CPoint::operator++(int n) {
+
+	CPoint p_tmp=*this;
+
+	p_tmp.n_x++;
+	p_tmp.n_y++;
+
+	return p_tmp;
+
 }

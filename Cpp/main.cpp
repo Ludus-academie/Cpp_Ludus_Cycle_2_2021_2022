@@ -35,10 +35,17 @@ int main() {
 
 
 	//Surcharge opérateur
-	p4=p1 + p2;
+	p4=p1 +p2;
 
+	//Surcharge ++
+
+	p4 = p1++;//postfixe
 	
+	p4 = ++p1;//prefixe
 
+	CCercle c(0, 0, 10);
+
+	cout << c[0].getX() << c[0].getY() << endl;
 
 	return 0;
 	
