@@ -15,7 +15,7 @@ CCercle::CCercle(int n_x, int n_y, int n_r)
 		
 }
 
-CPoint CCercle::operator[](int n_i)
+CPoint &CCercle::operator[](int n_i)
 {
 	if (n_i >= 0 && n_i < TAILLE) {
 		return tab_pt[n_i];

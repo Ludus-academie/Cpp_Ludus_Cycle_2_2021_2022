@@ -79,11 +79,11 @@ public :
 	//Surcharge opérateur
 
 	//Surcharge opérateur +
-	//CPoint operator +(CPoint& p)const;//p1.operator+(p2)
+	CPoint operator +(CPoint& p)const;//p1.operator+(p2)
 
 
 	//Surcharge operateur + avec une fct amie
-	friend CPoint operator + (const CPoint& p1,const CPoint &p2);//operator+(p1,p2)
+	//friend CPoint operator + (const CPoint& p1,const CPoint &p2);//operator+(p1,p2)
 
 	//Surcharge opérateur =
 

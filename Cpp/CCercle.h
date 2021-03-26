@@ -23,5 +23,5 @@ public:
 	friend bool collision(CPoint& p, CCercle& c);
 
 	//Surcharge operateur []
-	CPoint operator[](int n_i);
+	CPoint &operator[](int n_i);
 };
