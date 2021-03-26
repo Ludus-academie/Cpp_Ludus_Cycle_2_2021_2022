@@ -47,6 +47,10 @@ int main() {
 
 	cout << c[0].getX() << c[0].getY() << endl;
 
+	c[0] = p4;
+
+	cout << c[0].getX() << c[0].getY() << endl;
+
 	return 0;
 	
 }
