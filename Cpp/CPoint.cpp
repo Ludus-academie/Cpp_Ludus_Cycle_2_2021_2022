@@ -104,6 +104,11 @@ bool coincidePoint(const CPoint& p, const CPoint& q)
 
 
 
+void CPoint::afficheLog() const
+{
+		cout << n_x << n_y << endl;
+}
+
 //Surcharge opérateur +
 CPoint CPoint::operator+(CPoint& p)const
 {

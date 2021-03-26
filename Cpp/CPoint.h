@@ -17,6 +17,7 @@ class CPoint {
 	//Protected
 
 private :
+	//non accessible depuis la classe enfant
 	//Données membres
 	int n_x;
 	int n_y;
@@ -29,9 +30,11 @@ private :
 
 protected :
 
+	//accessible depuis la classe enfant
+
 public :
 
-	
+	//accessible depuis la classe enfant
 	CPoint();
 	CPoint(int n_x, int n_y, char *pt_coul);
 
@@ -69,11 +72,8 @@ public :
 	friend bool collision(CPoint& p, CCercle& c);
 	
 
-	//inline
-	inline void afficheLog() {
 
-		cout << n_x << n_y << endl;
-	}
+	void afficheLog()const;
 
 
 	//Surcharge opérateur

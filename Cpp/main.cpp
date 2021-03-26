@@ -1,9 +1,10 @@
 #include "CPoint.h"
 #include "CCercle.h"
+#include "CPointcol.h"
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
-//#define TAILLE 10
+#define TAILLE 10
 
 using namespace std;
 
@@ -17,39 +18,18 @@ void modifPoint(CPoint &p);
 
 int main() {
 
-	const int TAILLE = 10;
+	CPointcol p1(10);
+	char c_Coul[TAILLE];
+	strcpy_s(c_Coul, TAILLE, "vert");
+	CPointcol p2(0, 0,c_Coul,10);
+
+	p2.setColor(15);
+	cout << p2.getColor() << endl;
+
+	p2.afficheLog();
 	
-	//Instance de la classe CPoint
-	char* pt_couleur = new char[TAILLE];
-	strcpy_s(pt_couleur,TAILLE,"rouge");
-	CPoint p1(0, 0, pt_couleur);
 	
-	CPoint p2(0, 2, pt_couleur);
-
-
-	//Constructeur de copie
 	
-	CPoint p3(p1);
-
-	CPoint p4 = p2;
-
-
-	//Surcharge opérateur
-	p4=p1 +p2;
-
-	//Surcharge ++
-
-	p4 = p1++;//postfixe
-	
-	p4 = ++p1;//prefixe
-
-	CCercle c(0, 0, 10);
-
-	cout << c[0].getX() << c[0].getY() << endl;
-
-	c[0] = p4;
-
-	cout << c[0].getX() << c[0].getY() << endl;
 
 	return 0;
 	
