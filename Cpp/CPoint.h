@@ -19,27 +19,27 @@ class CPoint {
 private :
 	//non accessible depuis la classe enfant
 	//Données membres
-	int n_x;
-	int n_y;
-
-	char* pt_coul;
-
-	static int n_cpt;
+	
 
 	
 
 protected :
 
 	//accessible depuis la classe enfant
+	int n_x;
+	int n_y;
 
+	
+
+	static int n_cpt;
 public :
 
 	//accessible depuis la classe enfant
 	CPoint();
-	CPoint(int n_x, int n_y, char *pt_coul);
+	CPoint(int n_x, int n_y);
 
 	//Constructeur de copie
-	CPoint(CPoint& p);
+    CPoint(const CPoint& p);
 
 	//Destructeur
 	~CPoint();
@@ -48,7 +48,7 @@ public :
 	//Accesseurs
 	int getX()const;
 	int getY()const;
-	char* getCoul()const;
+	
 
 	static int getCptInstance();
 
@@ -58,7 +58,7 @@ public :
 	//Mutateurs
 	void setX(int n_x=9);
 	void setY(int n_y=9);
-	void setCoul(char* pt_coul);
+	
 
 	//Méthode coincide, fcts amie independante de classe
 	friend bool coincidePoint(const CPoint & p, const CPoint & q);
@@ -79,15 +79,15 @@ public :
 	//Surcharge opérateur
 
 	//Surcharge opérateur +
-	CPoint operator +(CPoint& p)const;//p1.operator+(p2)
+	CPoint operator +( const CPoint& p)const;//p1.operator+(p2)
 
 
 	//Surcharge operateur + avec une fct amie
-	//friend CPoint operator + (const CPoint& p1,const CPoint &p2);//operator+(p1,p2)
+	//friend CPoint& operator + (const CPoint& p1,const CPoint &p2);//operator+(p1,p2)
 
 	//Surcharge opérateur =
 
-	CPoint operator =(const CPoint& p);
+	CPoint &operator =(const CPoint& p);
 
 	//Surcharge ++
 	//++a
@@ -95,17 +95,19 @@ public :
 	//int b=a
 
 	//Notation préfixé
-	CPoint operator++();
+	CPoint &operator++();
 
 	//Notation postfixé
-	CPoint operator++(int n);
-
-
-
+	CPoint& operator++(int n);
 
 	
 
 
+	//conversion de type
+
+	operator int()const  {
+		return n_x;
+	}
 
 	
 };

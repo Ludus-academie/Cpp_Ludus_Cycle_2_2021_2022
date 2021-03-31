@@ -1,4 +1,5 @@
 #include "CPoint.h"
+
 #include <iostream>
 #include <string.h>
 #define TAILLE 10
@@ -11,20 +12,18 @@ CPoint::CPoint()
 
 	this->n_x = 0;
 	this->n_y = 0;
-	this->pt_coul = new char[TAILLE];
-	strcpy_s(this->pt_coul, TAILLE, "vert");
+	
 	n_cpt++;
 	
 }
 
 
-CPoint::CPoint(int n_x, int n_y,char *pt_coul)
+CPoint::CPoint(int n_x, int n_y)
 {
 	
 	this->n_x = n_x;
 	this->n_y = n_y;
-	this->pt_coul = new char[TAILLE];
-	strcpy_s(this->pt_coul,TAILLE,pt_coul);
+	
 	n_cpt++;
 
 }
@@ -33,8 +32,7 @@ CPoint::~CPoint()
 {
 	std::cout << "Destructeur" << std::endl;
 	
-	delete[] pt_coul;
-
+	
 	n_cpt--;
 		
 	cout << n_cpt << endl;
@@ -42,12 +40,10 @@ CPoint::~CPoint()
 }
 
 //Constructeur de copie
-CPoint::CPoint(CPoint& p)
+CPoint::CPoint(const CPoint& p)
 {
 	this->n_x = p.n_x;
 	this->n_y = p.n_y;
-	this->pt_coul = new char[TAILLE];
-	strcpy_s(this->pt_coul, TAILLE, p.getCoul());
 	n_cpt++;
 
 }
@@ -65,10 +61,7 @@ int CPoint::getY()const
 	return n_y;
 }
 
-char* CPoint::getCoul() const
-{
-	return this->pt_coul;
-}
+
 
 int CPoint::getCptInstance()
 {
@@ -87,10 +80,7 @@ void CPoint::setY(int n_y)
 	this->n_y = n_y;
 }
 
-void CPoint::setCoul(char* pt_coul)
-{
-	strcpy_s(this->pt_coul, TAILLE, pt_coul);
-}
+
 
 
 
@@ -110,44 +100,33 @@ void CPoint::afficheLog() const
 }
 
 //Surcharge opérateur +
-CPoint CPoint::operator+(CPoint& p)const
+CPoint CPoint::operator+( const CPoint& p)const
 {
-	CPoint p_tmp;
-	p_tmp.n_x = this->n_x + p.n_x;
-	p_tmp.n_y = this->n_y + p.n_y;
+	
+	
+	CPoint pPoint;
+	pPoint.n_x = this->n_x + p.n_x;
+	pPoint.n_y = this->n_y + p.n_y;
 
-	return p_tmp;
+	return pPoint;
+	
 }
 
-
-//Surcharge opérateur + fct amie
-/*CPoint operator+(const CPoint& p1, const CPoint& p2)
-{
-	CPoint p_tmp;
-	p_tmp.n_x = p1.n_x + p2.n_x;
-	p_tmp.n_y = p1.n_y + p2.n_y;
-
-	return p_tmp;
-
-}*/
 
 
 
 //Surcharge operateur =
-CPoint CPoint::operator=(const CPoint& p)
+CPoint& CPoint::operator=(const CPoint& p)
 {
-	
 	this->n_x = p.n_x;
 	this->n_y = p.n_y;
-	this->pt_coul = new char[TAILLE];
-	strcpy_s(this->pt_coul, TAILLE, p.getCoul());
 	
 	return *this;
 }
 
 
 //prefixe
-CPoint CPoint::operator++() {
+CPoint& CPoint::operator++() {
 
 	this->n_x++;
 	this->n_y++;
@@ -157,7 +136,7 @@ CPoint CPoint::operator++() {
 }
 
 //postfixe
-CPoint CPoint::operator++(int n) {
+CPoint& CPoint::operator++(int n) {
 
 	CPoint p_tmp=*this;
 
@@ -167,3 +146,7 @@ CPoint CPoint::operator++(int n) {
 	return p_tmp;
 
 }
+
+
+
+

@@ -11,7 +11,9 @@ public :
 
 	//Constructeur
 	CPointcol(short sn_cl = 0);
-	CPointcol(int n_x, int n_y, char* pt_coul, short sn_cl);
+	CPointcol(int n_x, int n_y, short sn_cl);
+
+	 CPointcol(const CPointcol& p);
 
 	//Destructeur
 	~CPointcol();
@@ -25,10 +27,10 @@ public :
 	//sur def afficheLog de CPoint
 	void afficheLog()const;
 
+	
+	CPointcol operator +(const CPointcol& p)const;
 
-
-
-
+	CPointcol& operator=(const CPointcol& p);
 
 
 
