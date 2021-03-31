@@ -98,7 +98,7 @@ public :
 	CPoint &operator++();
 
 	//Notation postfixé
-	CPoint& operator++(int n);
+	CPoint operator++(int n);
 
 	
 

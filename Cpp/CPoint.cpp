@@ -136,7 +136,7 @@ CPoint& CPoint::operator++() {
 }
 
 //postfixe
-CPoint& CPoint::operator++(int n) {
+CPoint CPoint::operator++(int n) {
 
 	CPoint p_tmp=*this;
 
