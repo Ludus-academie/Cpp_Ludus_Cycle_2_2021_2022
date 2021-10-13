@@ -143,6 +143,7 @@
     <ClInclude Include="CCercle.h" />
     <ClInclude Include="CPointcol.h" />
     <ClInclude Include="CVect.h" />
+    <ClInclude Include="TCVect.h" />
     <ClInclude Include="tPoint.h" />
   </ItemGroup>
   <ItemGroup>
