@@ -73,7 +73,7 @@ public :
 	
 
 
-	void afficheLog()const;
+	virtual void afficheLog()const;
 
 
 	//Surcharge opérateur

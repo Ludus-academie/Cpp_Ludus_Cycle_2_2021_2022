@@ -2,7 +2,10 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
-#include "TCVect.h"
+
+#include "CPoint.h"
+#include "CPointcol.h"
+#include <list>
 
 #define TAILLE 10
 
@@ -24,31 +27,55 @@ void afficheLog(char* pt_value);
 
 int main() {
 	
-	TCVect<int> vect;
+	
 
-	int n_val1 = 2, n_val2 = 10;
+	CPoint p;
+	CPointcol pc(5,2,255);
 
-	vect.setX(n_val1);
-	vect.setY(n_val2);
+	p = pc;
+	//methode (CPoint)
 
+	CPoint* pt_p = &p;
+	CPointcol* pt_pc = &pc;
 
-	vect.affiche();
+	//assignation des pointeurs
+	//pt_p = pt_pc;
 
-	TCVect<double> vect2;
+	//Cast CPointcol sur CPoint
+	//pt_pc = (CPointcol*)pt_p;
 
-	double dbl_val1 = 2.8, dbl_val2 = 5.8;
+	/*pt_p->afficheLog();
 
-	vect2.setX(dbl_val1);
-	vect2.setY(dbl_val2);
+	pt_pc->afficheLog();
 
+	pt_p = pt_pc;
 
-	vect2.affiche();
+	pt_p->afficheLog();
+	*/
 
+	//Exemple list de point
 
-	TCVect<char>vect3;
+	list<CPoint> l_point;
 
-	vect3.affiche();
+	l_point.push_front(p);
+	l_point.push_front(pc);
 
+	for (std::list<CPoint>::iterator it = l_point.begin(); it != l_point.end(); ++it) {
+		 it->afficheLog();
+
+	}
+	
+	l_point.pop_back();
+		
+
+	for (std::list<CPoint>::iterator it = l_point.begin(); it != l_point.end(); ++it) {
+		it->afficheLog();
+
+	}
+
+	l_point.clear();
+
+	
 
 	
 	return 0;
