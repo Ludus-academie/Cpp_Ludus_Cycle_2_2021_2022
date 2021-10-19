@@ -25,7 +25,7 @@ public :
 	short getColor()const;
 
 	//sur def afficheLog de CPoint
-	void afficheLog()const;
+	void afficheLog()const override;
 
 	
 	CPointcol operator +(const CPointcol& p)const;

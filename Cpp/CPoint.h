@@ -63,51 +63,17 @@ public :
 	//Méthode coincide, fcts amie independante de classe
 	friend bool coincidePoint(const CPoint & p, const CPoint & q);
 
-	//fonction membre de la classe point amie de la classe Cercle, 
-	//accès aux membres private de CCercle
-	bool collision(CCercle& c);
 
-	//fonction amie de la classe point et cercle, 
-	//accès aux membres private de CPoint et CCercle
-	friend bool collision(CPoint& p, CCercle& c);
-	
+	//fct virtuelle
+	virtual void afficheLog()const=0;
 
-
-	virtual void afficheLog()const;
-
-
-	//Surcharge opérateur
-
-	//Surcharge opérateur +
-	CPoint operator +( const CPoint& p)const;//p1.operator+(p2)
-
-
-	//Surcharge operateur + avec une fct amie
-	//friend CPoint& operator + (const CPoint& p1,const CPoint &p2);//operator+(p1,p2)
 
 	//Surcharge opérateur =
 
 	CPoint &operator =(const CPoint& p);
 
-	//Surcharge ++
-	//++a
-	//a++
-	//int b=a
-
-	//Notation préfixé
-	CPoint &operator++();
-
-	//Notation postfixé
-	CPoint operator++(int n);
-
 	
 
-
-	//conversion de type
-
-	operator int()const  {
-		return n_x;
-	}
 
 	
 };

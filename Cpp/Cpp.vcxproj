@@ -139,15 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cliste.h" />
     <ClInclude Include="CPoint.h" />
-    <ClInclude Include="CCercle.h" />
     <ClInclude Include="CPointcol.h" />
     <ClInclude Include="CVect.h" />
     <ClInclude Include="TCVect.h" />
     <ClInclude Include="tPoint.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CCercle.cpp" />
+    <ClCompile Include="Cliste.cpp" />
     <ClCompile Include="CPoint.cpp" />
     <ClCompile Include="CPointcol.cpp" />
     <ClCompile Include="CVect.cpp" />

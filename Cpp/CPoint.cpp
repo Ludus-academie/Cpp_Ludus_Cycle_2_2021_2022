@@ -93,25 +93,10 @@ bool coincidePoint(const CPoint& p, const CPoint& q)
 
 
 
-
 void CPoint::afficheLog() const
 {
 		cout << n_x << n_y << endl;
 }
-
-//Surcharge opérateur +
-CPoint CPoint::operator+( const CPoint& p)const
-{
-	
-	
-	CPoint pPoint;
-	pPoint.n_x = this->n_x + p.n_x;
-	pPoint.n_y = this->n_y + p.n_y;
-
-	return pPoint;
-	
-}
-
 
 
 
@@ -125,27 +110,6 @@ CPoint& CPoint::operator=(const CPoint& p)
 }
 
 
-//prefixe
-CPoint& CPoint::operator++() {
-
-	this->n_x++;
-	this->n_y++;
-
-	return *this;
-
-}
-
-//postfixe
-CPoint CPoint::operator++(int n) {
-
-	CPoint p_tmp=*this;
-
-	p_tmp.n_x++;
-	p_tmp.n_y++;
-
-	return p_tmp;
-
-}
 
 
 

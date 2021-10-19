@@ -5,7 +5,7 @@
 
 #include "CPoint.h"
 #include "CPointcol.h"
-#include <list>
+#include "Cliste.h"
 
 #define TAILLE 10
 
@@ -22,59 +22,28 @@ void afficheLog(char* pt_value);
 
 
 
-
-
-
 int main() {
 	
 	
 
-	CPoint p;
+	//CPoint p; classe abstraite ne peut être instanciée.
 	CPointcol pc(5,2,255);
 
-	p = pc;
-	//methode (CPoint)
-
-	CPoint* pt_p = &p;
+	//CPoint* pt_p = &p;
 	CPointcol* pt_pc = &pc;
 
-	//assignation des pointeurs
-	//pt_p = pt_pc;
+	Cliste ma_liste;
 
-	//Cast CPointcol sur CPoint
-	//pt_pc = (CPointcol*)pt_p;
+	//ma_liste.ajoute(&p);
+	ma_liste.ajoute(&pc);
 
-	/*pt_p->afficheLog();
+	ma_liste.affiche_liste();
 
-	pt_pc->afficheLog();
 
-	pt_p = pt_pc;
 
-	pt_p->afficheLog();
-	*/
-
-	//Exemple list de point
-
-	list<CPoint> l_point;
-
-	l_point.push_front(p);
-	l_point.push_front(pc);
-
-	for (std::list<CPoint>::iterator it = l_point.begin(); it != l_point.end(); ++it) {
-		 it->afficheLog();
-
-	}
 	
-	l_point.pop_back();
-		
 
-	for (std::list<CPoint>::iterator it = l_point.begin(); it != l_point.end(); ++it) {
-		it->afficheLog();
-
-	}
-
-	l_point.clear();
-
+	
 	
 
 	
