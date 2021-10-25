@@ -3,10 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "CPoint.h"
-#include "CPointcol.h"
-#include "Cliste.h"
-#include <typeinfo>//typeid
+#include "CVecteur.h"
+#include "CVecteurLimit.h"
 
 
 #define TAILLE 10
@@ -26,46 +24,25 @@ void afficheLog(char* pt_value);
 
 int main() {
 	
-	//Identification de type à l'execution
+	//Gestion des exeptions
 
-	CPoint p1, p2;
-	CPointcol pc1, pc2;
+	CVecteur v(10);
+	try {
+		for (int ni = 0; ni < 10; ni++) {
 
-	CPoint* pp1;
-	CPoint* pp2;
+			v[ni] = ni;
+			std::cout << v[ni] << std::endl;
+		}
 
-	pp1 = &p1;
-	pp2 = &p2;
-
-	std::cout << "type de pp1 : " << typeid (pp1).name() << std::endl;
-	std::cout << "type de *pp1: " << typeid (*pp1).name() << std::endl;
-
-	if (typeid (*pp1).name() == typeid (*pp2).name()) {
-		std::cout << "Sont de meme type" << std::endl;
+		v[15] = 15;
 	}
-	else {
+	catch (CVecteurLimit limit) {
 
-		std::cout << "Sont de type different" << std::endl;
+		std::cout << "exception limite" << std::endl;
 
+		exit(-1);
 	}
-
-
-	pp1 = &pc1;
-	pp2 = &pc2;
-
-	std::cout << "type de pp1 : " << typeid (pp1).name() << std::endl;
-	std::cout << "type de *pp1: " << typeid (*pp1).name() << std::endl;
-
-	pp1 = &p1;
 	
-	if (typeid (*pp1).name() == typeid (*pp2).name()) {
-		std::cout << "Sont de meme type" << std::endl;
-	}
-	else {
-
-		std::cout << "Sont de type different" << std::endl;
-
-	}
 	
 
 	

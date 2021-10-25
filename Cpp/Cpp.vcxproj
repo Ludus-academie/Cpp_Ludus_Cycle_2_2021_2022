@@ -143,6 +143,8 @@
     <ClInclude Include="CPoint.h" />
     <ClInclude Include="CPointcol.h" />
     <ClInclude Include="CVect.h" />
+    <ClInclude Include="CVecteur.h" />
+    <ClInclude Include="CVecteurLimit.h" />
     <ClInclude Include="TCVect.h" />
     <ClInclude Include="tPoint.h" />
   </ItemGroup>
@@ -151,6 +153,7 @@
     <ClCompile Include="CPoint.cpp" />
     <ClCompile Include="CPointcol.cpp" />
     <ClCompile Include="CVect.cpp" />
+    <ClCompile Include="CVecteur.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tPoint.cpp" />
   </ItemGroup>

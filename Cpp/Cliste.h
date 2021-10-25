@@ -26,4 +26,6 @@ public :
 
 	int fini() { return (pcourant == nullptr); }
 
+	
+
 };
