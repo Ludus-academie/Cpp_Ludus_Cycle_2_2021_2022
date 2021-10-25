@@ -24,7 +24,7 @@ void afficheLog(char* pt_value);
 
 int main() {
 	
-	//Gestion des exeptions
+	//Gestion des exceptions
 
 	CVecteur v(10);
 	try {
