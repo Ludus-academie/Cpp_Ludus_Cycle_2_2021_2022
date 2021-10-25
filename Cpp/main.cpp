@@ -7,6 +7,7 @@
 #include "CPointcol.h"
 #include "Cliste.h"
 
+
 #define TAILLE 10
 
 
@@ -31,15 +32,18 @@ int main() {
 
 	//CPoint* pt_p = &p;
 	CPointcol* pt_pc = &pc;
+	
 
 	Cliste ma_liste;
 
 	//ma_liste.ajoute(&p);
 	ma_liste.ajoute(&pc);
 
+
 	ma_liste.affiche_liste();
 
 
+	
 
 	
 
