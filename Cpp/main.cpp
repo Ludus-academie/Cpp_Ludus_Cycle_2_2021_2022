@@ -6,6 +6,7 @@
 #include "CPoint.h"
 #include "CPointcol.h"
 #include "Cliste.h"
+#include <typeinfo>//typeid
 
 
 #define TAILLE 10
@@ -25,26 +26,46 @@ void afficheLog(char* pt_value);
 
 int main() {
 	
+	//Identification de type à l'execution
+
+	CPoint p1, p2;
+	CPointcol pc1, pc2;
+
+	CPoint* pp1;
+	CPoint* pp2;
+
+	pp1 = &p1;
+	pp2 = &p2;
+
+	std::cout << "type de pp1 : " << typeid (pp1).name() << std::endl;
+	std::cout << "type de *pp1: " << typeid (*pp1).name() << std::endl;
+
+	if (typeid (*pp1).name() == typeid (*pp2).name()) {
+		std::cout << "Sont de meme type" << std::endl;
+	}
+	else {
+
+		std::cout << "Sont de type different" << std::endl;
+
+	}
+
+
+	pp1 = &pc1;
+	pp2 = &pc2;
+
+	std::cout << "type de pp1 : " << typeid (pp1).name() << std::endl;
+	std::cout << "type de *pp1: " << typeid (*pp1).name() << std::endl;
+
+	pp1 = &p1;
 	
+	if (typeid (*pp1).name() == typeid (*pp2).name()) {
+		std::cout << "Sont de meme type" << std::endl;
+	}
+	else {
 
-	//CPoint p; classe abstraite ne peut être instanciée.
-	CPointcol pc(5,2,255);
+		std::cout << "Sont de type different" << std::endl;
 
-	//CPoint* pt_p = &p;
-	CPointcol* pt_pc = &pc;
-	
-
-	Cliste ma_liste;
-
-	//ma_liste.ajoute(&p);
-	ma_liste.ajoute(&pc);
-
-
-	ma_liste.affiche_liste();
-
-
-	
-
+	}
 	
 
 	

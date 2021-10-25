@@ -65,7 +65,7 @@ public :
 
 
 	//fct virtuelle
-	virtual void afficheLog()const=0;
+	virtual void afficheLog()const;
 
 
 	//Surcharge opérateur =
